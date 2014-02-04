@@ -6,7 +6,7 @@ package lab1;
  * @author your name goes here
  * @version 1.00
  */
-public class IntroJavaCourse implements ProgrammingCourses {
+public class IntroJavaCourse extends ProgrammingCourses {
 
     private int classCapacity;
     private int totalPointsPossible;
@@ -14,12 +14,16 @@ public class IntroJavaCourse implements ProgrammingCourses {
     private String courseName;
     private String courseNumber;
     private double credits;
-    private String prerequisites;
+    private final String prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber, String prerequisites) {
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.prerequisites = prerequisites;
+    }
+
+    public String getInstructorName() {
+        return String.format("Matt Green");
     }
 
     public String getCourseNumber() {
@@ -39,7 +43,7 @@ public class IntroJavaCourse implements ProgrammingCourses {
     }
 
     public void setPrerequisites(String prerequisites) {
-        if (prerequisites != "Intro to Programming") {
+        if (!"Intro to Programming".equals(prerequisites)) {
             System.out.println(
                     "Error: you do not meet the prerequisites to take this course");
             System.exit(0);
@@ -56,18 +60,34 @@ public class IntroJavaCourse implements ProgrammingCourses {
         this.setCredits(credits);
     }
 
+    @Override
     public int getClassCapacity() {
         return classCapacity;
     }
 
+    /**
+     *
+     * @param classCapacity
+     */
+    @Override
     public void setClassCapacity(int classCapacity) {
         this.classCapacity = classCapacity;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public int getTotalPointsPossible() {
         return totalPointsPossible;
     }
 
+    /**
+     *
+     * @param totalPointsPossible
+     */
+    @Override
     public void setTotalPointsPossible(int totalPointsPossible) {
         this.totalPointsPossible = totalPointsPossible;
     }

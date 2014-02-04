@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
  * change this fact.
  *
- * @author your name goes here
+ * @author James
  * @version 1.00
  */
-public class IntroToProgrammingCourse implements ProgrammingCourses {
+public class IntroToProgrammingCourse extends ProgrammingCourses {
 
     private int classCapacity;
     private int totalPointsPossible;
@@ -19,8 +19,16 @@ public class IntroToProgrammingCourse implements ProgrammingCourses {
     private double credits;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
-        this.setCourseName(courseName);
-        this.setCourseNumber(courseNumber);
+        this.courseName = courseName;
+        this.courseNumber = courseNumber;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getInstructorName() {
+        return String.format("Jeff Grissom");
     }
 
     public String getCourseNumber() {
@@ -62,18 +70,38 @@ public class IntroToProgrammingCourse implements ProgrammingCourses {
         this.courseName = courseName;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public int getClassCapacity() {
         return classCapacity;
     }
 
+    /**
+     *
+     * @param classCapacity
+     */
+    @Override
     public void setClassCapacity(int classCapacity) {
         this.classCapacity = classCapacity;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public int getTotalPointsPossible() {
         return totalPointsPossible;
     }
 
+    /**
+     *
+     * @param totalPointsPossible
+     */
+    @Override
     public void setTotalPointsPossible(int totalPointsPossible) {
         this.totalPointsPossible = totalPointsPossible;
     }

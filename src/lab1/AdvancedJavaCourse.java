@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * @author your name goes here
  * @version 1.00
  */
-public class AdvancedJavaCourse implements ProgrammingCourses {
+public class AdvancedJavaCourse extends ProgrammingCourses {
 
     private int classCapacity;
     private int totalPointsPossible;
@@ -22,6 +22,10 @@ public class AdvancedJavaCourse implements ProgrammingCourses {
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.prerequisites = prerequisites;
+    }
+
+    public String getInstructorName() {
+        return String.format("Jim Lambardo");
     }
 
     public String getCapitalizedCourseName() {
@@ -70,18 +74,34 @@ public class AdvancedJavaCourse implements ProgrammingCourses {
         this.courseNumber = courseNumber;
     }
 
+    @Override
     public int getClassCapacity() {
         return classCapacity;
     }
 
+    /**
+     *
+     * @param classCapacity
+     */
+    @Override
     public void setClassCapacity(int classCapacity) {
         this.classCapacity = classCapacity;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public int getTotalPointsPossible() {
         return totalPointsPossible;
     }
 
+    /**
+     *
+     * @param totalPointsPossible
+     */
+    @Override
     public void setTotalPointsPossible(int totalPointsPossible) {
         this.totalPointsPossible = totalPointsPossible;
     }
